@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAWAQIT - مواقيت الصلاة</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- شاشة الإعداد الأولية / إدخال رابط المسجد -->
+    <div id="setup-container" class="setup-container">
+        <div class="logo">
+            <!-- استخدام شعار نصي بسيط أو صورة إن توفرت -->
+            <h1>MAWAQIT</h1>
+            <p>للتلفاز وأجهزة سطح المكتب</p>
+        </div>
+        
+        <div class="form-container">
+            <h2>إعداد المسجد الخاص بك</h2>
+            <p>يرجى إدخال اسم المسجد أو رابطه من موقع Mawaqit</p>
+            
+            <div class="input-group">
+                <input type="text" id="mosque-input" placeholder="مثال: https://mawaqit.net/ar/my-mosque" dir="ltr">
+                <button id="save-btn">حفظ وعرض</button>
+            </div>
+            
+            <div class="help-text">
+                <p>يمكنك أيضاً إدخال اسم المسجد فقط (مثال: my-mosque)</p>
+                <div class="link-wrapper">
+                    <a href="#" id="find-mosque" class="external-link">ابحث عن مسجدك هنا</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- شاشة العرض الرئيسية -->
+    <div id="webview-container" class="webview-container hidden">
+        <div class="toolbar">
+            <button id="back-btn" class="icon-btn" title="تغيير المسجد">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="currentColor" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
+                </svg>
+            </button>
+            <button id="fullscreen-btn" class="icon-btn" title="ملء الشاشة (F11)">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="currentColor" d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"></path>
+                </svg>
+            </button>
+            <button id="refresh-btn" class="icon-btn" title="تحديث">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="currentColor" d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"></path>
+                </svg>
+            </button>
+        </div>
+        <!-- iframe  لعرض صفحة المسجد -->
+        <iframe id="mosque-frame" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

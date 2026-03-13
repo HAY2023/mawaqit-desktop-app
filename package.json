@@ -1,0 +1,52 @@
+{
+  "name": "mawaqit-desktop-app",
+  "version": "1.0.0",
+  "description": "MAWAQIT - Prayer Times Desktop Application for displaying mosque prayer times on your computer screen",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "build": "electron-builder --win",
+    "build:portable": "electron-builder --win portable",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "author": "HAY2023",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HAY2023/mawaqit-desktop-app.git"
+  },
+  "devDependencies": {
+    "electron": "^28.1.0",
+    "electron-builder": "^24.9.1"
+  },
+  "dependencies": {
+    "electron-store": "^8.1.0"
+  },
+  "build": {
+    "appId": "com.mawaqit.desktop",
+    "productName": "MAWAQIT Prayer Times",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*",
+      "assets/**/*"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "assets/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}

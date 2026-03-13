@@ -1,0 +1,152 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0a1628;
+    color: white;
+    overflow: hidden;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Setup Screen */
+.setup-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.logo h1 {
+    font-size: 3rem;
+    margin-bottom: 0px;
+    color: #ffca28;
+}
+
+.logo p {
+    color: #90a4ae;
+    margin-top: 5px;
+    margin-bottom: 40px;
+}
+
+.form-container {
+    background-color: #112240;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+    width: 90%;
+}
+
+.form-container h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.input-group {
+    display: flex;
+    margin-top: 25px;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input[type="text"] {
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #2c3e50;
+    background-color: #0a1628;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border-color: #ffca28;
+}
+
+button {
+    background-color: #ffca28;
+    color: #0a1628;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #ffb300;
+}
+
+.help-text {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #90a4ae;
+}
+
+.external-link {
+    color: #ffca28;
+    text-decoration: none;
+}
+
+.external-link:hover {
+    text-decoration: underline;
+}
+
+/* WebView Container */
+.webview-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.toolbar {
+    height: 40px;
+    background-color: #112240;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    gap: 10px;
+    justify-content: flex-end; /* لليمين للغة العربية */
+    opacity: 0;
+    transition: opacity 0.3s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+/* إظهار الشريط عند اقتراب الماوس من الأعلى */
+.webview-container:hover .toolbar {
+    opacity: 1;
+}
+
+.icon-btn {
+    background: transparent;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffca28;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    flex-grow: 1;
+}
